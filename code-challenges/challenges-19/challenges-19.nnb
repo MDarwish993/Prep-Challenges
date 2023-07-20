@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function appendAndDelete(s, t, k) {\n    // Write your code here\n    let commonPrefixLen = 0;\n    for (let i = 0; i < Math.min(s.length, t.length); i++) {\n        if (s[i] === t[i]) {\n            commonPrefixLen++;\n        } else {\n            break;\n        }\n    }\n\n    const deleteOperations = s.length - commonPrefixLen;\n\n    const appendOperations = t.length - commonPrefixLen;\n\n    if (deleteOperations + appendOperations <= k) {\n        return \"Yes\";\n    } else if ((k - deleteOperations - appendOperations) % 2 === 0) {\n        return \"Yes\";\n    } else {\n        return \"No\";\n    }\n\n}"
+                "function appendAndDelete(s, t, k) {\n    // Write your code here\n\n  let commonPrefixLength = 0;\n  for (let i = 0; i < Math.min(s.length, t.length); i++) {\n    if (s[i] === t[i]) {\n      commonPrefixLength++;\n    } else {\n      break;\n    }\n  }\n\n\n  let totalOperations = s.length + t.length - 2 * commonPrefixLength;\n\n  \n  if (totalOperations <= k) {\n    \n    return \"Yes\";\n  } else if (k >= s.length + t.length) {\n    \n    return \"Yes\";\n  } else {\n    return \"No\";\n  }\n}"
             ],
             "outputs": []
         },
